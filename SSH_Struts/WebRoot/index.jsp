@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>Upload Your File</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -22,15 +22,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   <h1>Hello World Struts2</h1>
-   <form action="hello">
-      <label for="name">Please enter your name</label><br/>
-      <input type="text" name="name"/>
-      <input type="submit" value="Enter"/>
-   </form>
-   	<s:set name="mySet" value="#{'key1':'value1','key2':'value2'}" />
-	<s:property value="#mySet['key1']"/>   
-	<s:url value="#mySet['key1']" />      
-	<s:url value="%{#mySet['key1']}"/>   
+   <!-- <form action="upload" method="post"  enctype="multipart/form-data">
+      uploader:<input type="text" name="uploader"/>
+      select file:<input type="file" name="upload"/>
+       <input type="submit" value="Upload"/>
+   </form> --> 
+   	<s:form action="multiUpload.action" method="post" enctype="multipart/form-data">  
+	<s:file label="select file1" name="uploads" />  
+	<s:file label="select file2" name="uploads" />  
+	<s:file label="select file3" name="uploads" />  
+	<s:submit value="Upload" />  
+	</s:form>
   	</body>
 </html>

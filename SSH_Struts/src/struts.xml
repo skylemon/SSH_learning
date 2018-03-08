@@ -2,11 +2,14 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
-
+	<constant name="struts.devMode" value="true" />
     <package name="shiyanlou" extends="struts-default">
-        <action name="hello" class="com.susl.HelloWorldAction" method="execute">
-            <result name="success">/HelloWorld.jsp</result>
-            <result name="error">/Error.jsp</result>
+        
+        <action name="multiUpload" class="com.susl.MultiUploadAction" method="execute">
+        	<interceptor-ref name="defaultStack"></interceptor-ref>
+        	<param name="savePath">/multiUploadFiles</param>
+        	<result name="success">/MultiUploadSucceed.jsp</result>
+        	<result name="error">/error.jsp</result>
         </action>
     </package>  
 </struts>    
