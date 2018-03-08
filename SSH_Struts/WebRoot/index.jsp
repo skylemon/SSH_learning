@@ -27,11 +27,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       select file:<input type="file" name="upload"/>
        <input type="submit" value="Upload"/>
    </form> --> 
-   	<s:form action="multiUpload.action" method="post" enctype="multipart/form-data">  
+   	<s:form action="multiUpload" method="post" enctype="multipart/form-data">  
 	<s:file label="select file1" name="uploads" />  
 	<s:file label="select file2" name="uploads" />  
 	<s:file label="select file3" name="uploads" />  
-	<s:submit value="Upload" />  
+	<s:submit value="Upload" />
 	</s:form>
   	</body>
 </html>

@@ -17,18 +17,18 @@ public class MultiUploadAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private File[] uploads;
 	private String[] uploadsContentType;
-	private String[] uploadsFilename;
-	private String savaPath;
+	private String[] uploadsFileName;
+	private String savePath;
 	
 	public String execute() throws Exception{
-		String realPath=getSavaPath();
+		String realPath=getSavePath();
 		if(uploads!=null){
 			File savePath=new File(realPath);
 			if(!savePath.exists()){
 				savePath.mkdirs();
 			}
 			for(int i=0;i<uploads.length;i++){
-				File saveFile=new File(savaPath,getUploadsFilename()[i]);
+				File saveFile=new File(savePath,getUploadsFilename()[i]);
 				FileUtils.copyFile(uploads[i], saveFile);
 			}
 			ActionContext.getContext().put("message", "upload succeed");
@@ -50,16 +50,16 @@ public class MultiUploadAction extends ActionSupport {
 		this.uploadsContentType = uploadsContentType;
 	}
 	public String[] getUploadsFilename() {
-		return uploadsFilename;
+		return uploadsFileName;
 	}
-	public void setUploadsFilename(String[] uploadsFilename) {
-		this.uploadsFilename = uploadsFilename;
+	public void setUploadsFileName(String[] uploadsFileName) {
+		this.uploadsFileName = uploadsFileName;
 	}
-	public String getSavaPath() {
-		return ServletActionContext.getServletContext().getRealPath(savaPath);
+	public String getSavePath() {
+		return ServletActionContext.getServletContext().getRealPath(savePath);
 	}
-	public void setSavaPath(String savaPath) {
-		this.savaPath = savaPath;
+	public void setSavePath(String savePath) {
+		this.savePath = savePath;
 	}
 	
 }

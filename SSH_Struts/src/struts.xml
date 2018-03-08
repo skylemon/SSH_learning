@@ -3,13 +3,14 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
     <package name="shiyanlou" extends="struts-default">
-        
         <action name="multiUpload" class="com.susl.MultiUploadAction" method="execute">
         	<interceptor-ref name="defaultStack"></interceptor-ref>
         	<param name="savePath">/multiUploadFiles</param>
         	<result name="success">/MultiUploadSucceed.jsp</result>
         	<result name="error">/error.jsp</result>
+        	<result name="input">/index.jsp</result>
         </action>
     </package>  
 </struts>    

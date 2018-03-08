@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -23,13 +23,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    file name:<s:property value="+ uploadsFileName[0]"/><br/>
+    file name:<s:property value="uploadsFileName[0]"/><br/>
 file type:<s:property value="+ uploadsContentType[0]"/><br/>
 file address:<p> <%=basePath %><s:property value="'uploadMultiFiles/'   
         + uploadsFileName[0]"/></p><br/>  
 
-file name:<s:property value="+ uploadsFileName[1]"/><br/>
-file type:<s:property value="+ uploadsContentType[1]"/><br/>
+file name:<s:property value="uploadsFileName[1]"/><br/>
+file type:<s:property value="uploadsContentType[1]"/><br/>
 file address:<p> <%=basePath %><s:property value="'uploadMultiFiles/'   
         + uploadsFileName[1]"/></p><br/>  
 
