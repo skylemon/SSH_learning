@@ -28,7 +28,7 @@ public class MultiUploadAction extends ActionSupport {
 				savePath.mkdirs();
 			}
 			for(int i=0;i<uploads.length;i++){
-				File saveFile=new File(savePath,getUploadsFilename()[i]);
+				File saveFile=new File(savePath,getUploadsFileName()[i]);
 				FileUtils.copyFile(uploads[i], saveFile);
 			}
 			ActionContext.getContext().put("message", "upload succeed");
@@ -49,7 +49,7 @@ public class MultiUploadAction extends ActionSupport {
 	public void setUploadsContentType(String[] uploadsContentType) {
 		this.uploadsContentType = uploadsContentType;
 	}
-	public String[] getUploadsFilename() {
+	public String[] getUploadsFileName() {
 		return uploadsFileName;
 	}
 	public void setUploadsFileName(String[] uploadsFileName) {

@@ -23,10 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <s:debug></s:debug>
     file name:<s:property value="uploadsFileName[0]"/><br/>
-file type:<s:property value="+ uploadsContentType[0]"/><br/>
+file type:<s:property value="uploadsContentType[0]"/><br/>
 file address:<p> <%=basePath %><s:property value="'uploadMultiFiles/'   
-        + uploadsFileName[0]"/></p><br/>  
+        + uploadsFileName[0]"/><a href="download.action?filename=<s:property value="+ uploadsFileName[0]"/>">download</a></p><br/>  
 
 file name:<s:property value="uploadsFileName[1]"/><br/>
 file type:<s:property value="uploadsContentType[1]"/><br/>
