@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+    <field name="user.name">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[user name cannot be empty!]]></message>
+        </field-validator>
+
+        <field-validator type="regex">  
+            <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>  
+            <message><![CDATA[user name has invalid charcters!]]></message>  
+        </field-validator>
+
+        <field-validator type="stringlength">  
+            <param name="maxLength">10</param>  
+               <param name="minLength">4</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[user name must be within 4~10 characters!]]></message>  
+        </field-validator>
+    </field>
+
+    <field name="user.password">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>  
+            <message><![CDATA[password cannot be empty!]]></message>
+        </field-validator>
+
+        <field-validator type="regex">  
+            <param name="regex"><![CDATA[^[a-zA-Z0-9]+$]]></param>  
+            <message><![CDATA[password contains invalid charcters!]]></message>  
+        </field-validator>
+
+        <field-validator type="stringlength">  
+            <param name="maxLength">18</param>  
+               <param name="minLength">6</param>  
+               <param name="trim">true</param>  
+            <message><![CDATA[password must be within 6~18 characters!]]></message>  
+        </field-validator>
+    </field>
+</validators>
